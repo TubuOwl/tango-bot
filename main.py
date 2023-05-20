@@ -50,9 +50,6 @@ class bot(ch.RoomManager):
         body = message.body
         var = body.split(maxsplit=1)
 
-        if "@gustixa" in message.body.lower():
-            room.message(f"{methods.API.simsimi(args)}")
-
         if "@tidakterdaftar" in message.body.lower():
           if self.active <= time.time():
             self.active = time.time() + (60*5)
@@ -81,12 +78,6 @@ class bot(ch.RoomManager):
                room.message(f"User Profile <b>{args}</b>:\r{image}\r<b>Age</b>: {age} | <b>Gender</b>: {gender} | <b>Location</b>: {location}\r<b>Status</b>: {status}\r<b>About</b>: {about}", True)
            except Exception as e:
                room.message(f"Profile Not Found! {e}", True)
-
-        elif used_prefix and cmd in ["od", "odn"]:
-          if room.name in ["nico-nico", "log-me"]: room.message(f"Latest posts on <b>otakudesu.lol</b>: <br/><br/>{methods.Website.otakudesu_com_new_update()}", True)
-
-        elif used_prefix and cmd in ["ods"]:
-          if room.name in ["nico-nico", "log-me"]: room.message(f"{methods.Website.otakudesu_lol_search(args)}", True)
             
         elif used_prefix and cmd in ["eval"]:
            if args: room.message(str(eval(args)))
@@ -110,7 +101,6 @@ class bot(ch.RoomManager):
     if user.name[0] not in ["!", "#"]: print(f"[{datetime.datetime.now():%Y-%m-%d %I:%M:%S %p}] [{user.name}] left [{room.name}]")
 
 try:
-    #keep_alive()
     bot = bot.run(
         config.rooms, config.botname, config.password
     )
