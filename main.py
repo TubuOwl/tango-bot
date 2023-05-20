@@ -1,20 +1,16 @@
-import methods
-from methods import Google, API, Anime, utility, Website, other
 import cerach as ch
 import sys, time, datetime, re, html
 import requests
-
-#from keep_alive import keep_alive
 
 
 class config:
   rooms = ["log-me", "nico-nico"]
 
-  botname = "gustixa"
+  botname = ""
 
-  password = "botproject1"
+  password = ""
 
-  owner = ["gustixa", "tidakterdaftar", "sayuogiwara", "ulnuh"]
+  owner = ["tidakterdaftar"]
 
   def get_prefix(user):
     prefix = ['?']
