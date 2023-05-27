@@ -231,7 +231,7 @@ while True:
 
         #keep_alive()
 
-        bot = Bot.run(Config.rooms, Config.botname, Config.password)
+        bot = Bot.easy_start(Config.rooms, Config.botname, Config.password)
 
     except Exception as error:
 
